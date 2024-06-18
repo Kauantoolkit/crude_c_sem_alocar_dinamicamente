@@ -3,6 +3,7 @@
 
 #define MAX_PRODUTOS 100
 #define MAX_ANIMAIS 100
+#define MAX_SERVICOS 100
 
 typedef struct {
     char nome[20];
@@ -18,20 +19,19 @@ typedef struct {
     char dono_endereco[50];
 } Animal;
 
-
-
-
-typedef struct{
-    char servico[20];
+typedef struct {
+    char nome[20];
     float valor;
-
-}servico;
+} Servico;
 
 Produto produtos[MAX_PRODUTOS];
 int contador_de_produtos = 0;
 
 Animal animais[MAX_ANIMAIS];
 int contador_de_animais = 0;
+
+Servico servicos[MAX_SERVICOS];
+int contador_de_servicos = 0;
 
 // Funções de Produto
 void cadastro_produto() {
@@ -60,10 +60,10 @@ void editar_produto() {
     if (contador_de_produtos > 0) {
         listar_produtos();
         int indice;
-        printf("Digite o numero do produto que deseja editar: ");
+        printf("Digite o número do produto que deseja editar: ");
         scanf(" %i", &indice);
         if (indice < 0 || indice >= contador_de_produtos) {
-            printf("Indice invalido!\n");
+            printf("Índice inválido!\n");
             return;
         }
         printf("Nome atual: %s\n", produtos[indice].nome);
@@ -82,17 +82,17 @@ void excluir_produto() {
     if (contador_de_produtos > 0) {
         listar_produtos();
         int indice;
-        printf("Digite o numero do produto que deseja excluir: ");
+        printf("Digite o número do produto que deseja excluir: ");
         scanf(" %i", &indice);
         if (indice < 0 || indice >= contador_de_produtos) {
-            printf("Indice invalido!\n");
+            printf("Índice inválido!\n");
             return;
         }
         for (int i = indice; i < contador_de_produtos - 1; i++) {
             produtos[i] = produtos[i + 1];
         }
         contador_de_produtos -= 1;
-        printf("Produto excluido com sucesso!\n");
+        printf("Produto excluído com sucesso!\n");
     } else {
         printf("\nNenhum produto cadastrado\n");
     }
@@ -134,10 +134,10 @@ void editar_animal() {
     if (contador_de_animais > 0) {
         listar_animais();
         int indice;
-        printf("Digite o numero do animal que deseja editar: ");
+        printf("Digite o número do animal que deseja editar: ");
         scanf(" %i", &indice);
         if (indice < 0 || indice >= contador_de_animais) {
-            printf("Indice invalido!\n");
+            printf("Índice inválido!\n");
             return;
         }
         printf("Nome atual: %s\n", animais[indice].nome);
@@ -169,19 +169,87 @@ void excluir_animal() {
     if (contador_de_animais > 0) {
         listar_animais();
         int indice;
-        printf("Digite o numero do animal que deseja excluir: ");
+        printf("Digite o número do animal que deseja excluir: ");
         scanf(" %i", &indice);
         if (indice < 0 || indice >= contador_de_animais) {
-            printf("Indice invalido!\n");
+            printf("Índice inválido!\n");
             return;
         }
         for (int i = indice; i < contador_de_animais - 1; i++) {
             animais[i] = animais[i + 1];
         }
         contador_de_animais -= 1;
-        printf("Animal excluido com sucesso!\n");
+        printf("Animal excluído com sucesso!\n");
     } else {
         printf("\nNenhum animal cadastrado\n");
+    }
+}
+
+// Funções de Serviço
+void cadastro_servico() {
+    if (contador_de_servicos >= MAX_SERVICOS) {
+        printf("Limite de servicos atingido!\n");
+        return;
+    }
+
+    printf("Nome do servico: ");
+    scanf(" %s", servicos[contador_de_servicos].nome);
+    printf("Valor do servico: ");
+    scanf(" %f", &servicos[contador_de_servicos].valor);
+    contador_de_servicos += 1;
+    printf("Servico cadastrado com sucesso!\n");
+}
+
+void listar_servicos() {
+    printf("Lista de servicos:\n");
+    printf("NOME / VALOR\n");
+    for (int i = 0; i < contador_de_servicos; i++) {
+        printf("%s / %.2f [%i]\n", servicos[i].nome, servicos[i].valor, i);
+    }
+}
+
+void editar_servico() {
+    if (contador_de_servicos > 0) {
+        listar_servicos();
+        int indice;
+        printf("Digite o número do servico que deseja editar: ");
+        scanf(" %i", &indice);
+        if (indice < 0 || indice >= contador_de_servicos) {
+            printf("Índice inválido!\n");
+            return;
+        }
+        printf("Nome atual: %s\n", servicos[indice].nome);
+        printf("Novo nome: ");
+        scanf(" %s", servicos[indice].nome);
+        printf("Valor atual: %.2f\n", servicos[indice].valor);
+        printf("Novo valor: ");
+        scanf(" %f", &servicos[indice].valor);
+        printf("Servico editado com sucesso!\n");
+    }
+    
+     else {
+        printf("\nNenhum servico cadastrado\n");
+    }
+}
+
+void excluir_servico() {
+    if (contador_de_servicos > 0) {
+        listar_servicos();
+        int indice;
+        printf("Digite o número do servico que deseja excluir: ");
+        scanf(" %i", &indice);
+        if (indice < 0 || indice >= contador_de_servicos) {
+            printf("Índice inválido!\n");
+            return;
+        }
+        for (int i = indice; i < contador_de_servicos - 1; i++) {
+            servicos[i] = servicos[i + 1];
+        }
+        contador_de_servicos -= 1;
+        printf("Servico excluído com sucesso!\n");
+    }
+     else {
+        printf("\nNenhum servico cadastrado\n");
     }
 }
 
@@ -192,7 +260,6 @@ void menu_registro() {
     printf("Animal: \033[32m[2]\033[m\n");
     printf("Servico: \033[32m[3]\033[m\n");
     scanf(" %c", &escolha);
-
 
     if (escolha == '1') {
         printf("Menu de registros de produto\n");
@@ -208,13 +275,12 @@ void menu_registro() {
         } else if (escolha == '3') {
             excluir_produto();
         } else {
-            printf("Opcao invalida! Retornando ao menu de registro.\n");
+            printf("Opcao inválida! Retornando ao menu de registro.\n");
         }
 
-
-
-
-    } else if (escolha == '2') {
+    } 
+    
+    else if (escolha == '2') {
         printf("Menu de registros de animal\n");
         printf("Novo animal: [1]\n");
         printf("Editar animal: [2]\n");
@@ -228,20 +294,33 @@ void menu_registro() {
         } else if (escolha == '3') {
             excluir_animal();
         } else {
-            printf("Opcao invalida! Retornando ao menu de registro.\n");
-        }} 
-        
-        else if(escolha == '3'){
-            printf("menu registro de serviço");
+            printf("Opcao inválida! Retornando ao menu de registro.\n");
         }
+    }
+    
+    
+     else if (escolha == '3') {
+        printf("Menu de registros de servico\n");
+        printf("Novo servico: [1]\n");
+        printf("Editar servico: [2]\n");
+        printf("Excluir servico: [3]\n");
+        scanf(" %c", &escolha);
 
-
-
-
-
-        else {
-        printf("Opcao invalida! Retornando ao menu principal.\n");
+        if (escolha == '1') {
+            cadastro_servico();
+        } else if (escolha == '2') {
+            editar_servico();
+        } else if (escolha == '3') {
+            excluir_servico();
+        } else {
+            printf("Opcao inválida! Retornando ao menu de registro.\n");
         }
+    }
+    
+    
+     else {
+        printf("Opcao inválida! Retornando ao menu principal.\n");
+    }
 }
 
 // Menu Principal
@@ -257,15 +336,15 @@ int main() {
         scanf(" %c", &escolha_menu);
 
         if (escolha_menu == '1') {
-            printf("Voce escolheu a opcao de Compra (a ser implementado).\n");
+            printf("Você escolheu a opcao de Compra (a ser implementado).\n");
         } else if (escolha_menu == '2') {
-            printf("Voce escolheu a edicao de registros\n");
+            printf("Você escolheu a edicao de registros\n");
             menu_registro();
         } else if (escolha_menu == '3') {
             printf("Saindo...\n");
             break;
         } else {
-            printf("Opcao invalida! Tente novamente.\n");
+            printf("Opcao inválida! Tente novamente.\n");
         }
     }
 
