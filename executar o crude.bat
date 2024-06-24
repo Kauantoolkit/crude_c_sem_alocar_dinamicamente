@@ -1,6 +1,6 @@
 @echo off
 echo Compilando o programa...
-gcc main.c produtos.c servicos.c animal.c -o main -I.
+gcc main.c produtos.c servicos.c animal.c carrinho.c -o main -I.
 
 echo.
 echo Executando o programa...
