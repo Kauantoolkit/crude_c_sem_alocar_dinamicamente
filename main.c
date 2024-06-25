@@ -19,7 +19,6 @@ void menuProdutos() {
         printf("|| 2 | Listar produtos      ||\n");
         printf("|| 3 | Editar produto       ||\n");
         printf("|| 4 | Excluir produto      ||\n");
-        printf("|| 5 | Cadastrar cliente    ||\n");
         printf("|| 0| Sair                  ||\n");
         printf("==============================\n");
         printf("||Escolha uma opcao: ");
