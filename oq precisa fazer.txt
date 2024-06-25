@@ -1,7 +1,29 @@
 
-vincular todo animal cadastrado a um cliente
-vincular um carrinho a cada cliente
+
+vincular um carrinho a cada cliente:
+
+Problemas: 1: para implementar isso deviarmos criar um contador de intens no carrinho para cada carrinho vinculado a cada cliente...
+
+para fazer isso seria necessário mudar toda a estrutura atual, de maneira que o sistema trate sempre de um cliente especifico, o contador aumentado 
+e dimunuido seja o relacionado a esse cliente especifico declarado globalmente... Não da tempo
+
+vincular todo animal cadastrado a um cliente 
+problema semelhante ao do carrinho ao cliente, os contadores todos iriamn quebrar a não ser que toda mensão deles fosse subistituida por um array de contadores
+vinculado a cada cliente
+
+assim:
+
+typedef struct {
+    char nome[50];
+    char endereco[100];
+    char telefone[15];
+    ItemCarrinho carrinho[100]; // Carrinho do cliente
+    int contador_de_itens_no_carrinho; // Quantidade de itens no carrinho
+} Cliente;
 
 
+E não dá tempo para mudar todas as mensões de todos os contadores globais.
+
+o crude está funcional, é um crude, porem ainda não atingiu o escopo para ele planejado.
 
 

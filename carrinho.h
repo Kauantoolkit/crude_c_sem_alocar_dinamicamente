@@ -15,16 +15,6 @@ typedef struct {
     float subtotal;
 } ItemCarrinho;
 
-                                    //isso vai ser uma dor de cabeça massa
-
-
-
-//typedef struct {
-    //ItemCarrinho carrinho[100];
-    
-//} carrinho_por_cliente;
-
-
 
 extern ItemCarrinho carrinho[100];
 int extern contador_de_itens_no_carrinho;

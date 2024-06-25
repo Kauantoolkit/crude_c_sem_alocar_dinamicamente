@@ -13,6 +13,21 @@ void remover_do_carrinho();
 void finalizar_compra();
 void gerar_ticket(float total, const char* metodo_pagamento, int parcelas);
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 void listar_itens_combinados() {
     printf("||=============================||\n");
     printf("||Lista de produtos e servicos ||\n");
@@ -90,6 +105,7 @@ void adicionar_ao_carrinho() {
     }
 }
 
+
 void listar_carrinho() {
     if (contador_de_itens_no_carrinho == 0) {
         printf("||========================||\n");
@@ -106,6 +122,7 @@ void listar_carrinho() {
         printf(" [%i]\n", i);
     }
 }
+
 
 void remover_do_carrinho() {
     if (contador_de_itens_no_carrinho == 0) {
@@ -132,6 +149,7 @@ void remover_do_carrinho() {
     printf("|| Item removido do carrinho com sucesso! ||\n");
     printf("||========================================||\n");
 }
+
 
 void gerar_ticket(float total, const char* metodo_pagamento, int parcelas) {
     FILE* ticket = fopen("ticket.txt", "w");
@@ -165,6 +183,7 @@ void gerar_ticket(float total, const char* metodo_pagamento, int parcelas) {
     fclose(ticket);
     printf("Ticket de compra gerado com sucesso em 'ticket.txt'.\n");
 }
+
 
 void finalizar_compra() {
     if (contador_de_itens_no_carrinho == 0) {
