@@ -4,7 +4,7 @@
 #include <stdio.h> 
 
 typedef struct {
-    char nome[20];
+    char nome[100];
     float valor;
 } Produto;
 

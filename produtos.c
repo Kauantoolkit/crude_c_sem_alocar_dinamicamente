@@ -17,7 +17,7 @@ void cadastro_produto() {
 
 void listar_produtos() {
     printf("Lista de produtos:\n");
-    printf("NOME / VALOR\n");
+    printf("\nNOME / VALOR\n");
     for (int i = 0; i < contador_de_produtos; i++) {
         printf("[%i] %s:  %.2f \n",i, produtos[i].nome, produtos[i].valor);
     }
@@ -37,7 +37,7 @@ void editar_produto() {
         }
         printf("Nome atual: %s\n", produtos[indice].nome);
         printf("Novo nome: ");
-        scanf(" %19s", produtos[indice].nome); // Limitando entrada para 19 caracteres
+        scanf(" %s", produtos[indice].nome); 
         printf("Valor atual: %.2f\n", produtos[indice].valor);
         printf("Novo valor: ");
         scanf(" %f", &produtos[indice].valor);

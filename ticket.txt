@@ -1,10 +1,12 @@
 ||=============================||
 ||         Ticket de Compra    ||
 ||=============================||
-Nome: testew / Valor: 10.00 / Tipo: P / Quantia: 10 / Subtotal: 100.00
-Nome: banho_e_tosa / Valor: 100.00 / Tipo: S / Quantia: 1 / Subtotal: 100.00 / Animal: malu
-Total: 200.00
-Metodo de Pagamento: Dinheiro
+Nome: produto_teste_teste / Valor: 20.00 / Tipo: P / Quantia: 3 / Subtotal: 60.00
+Nome: banho_e_tosa / Valor: 100.00 / Tipo: S / Quantia: 1 / Subtotal: 100.00 / Animal: animal_teste
+Total: 160.00
+Metodo de Pagamento: Cartao
+Parcelas: 4
+Valor por Parcela: 40.00
 ||=============================||
 || Compra finalizada com sucesso! ||
 ||=============================||
