@@ -4,6 +4,7 @@
 #include "servicos.h"
 #include "animal.h"
 #include "carrinho.h"
+#include "cliente.h"
 
 
 //menus
@@ -78,7 +79,7 @@ void menuAnimais() {
                 break;
             default:
                 printf("||==================||\n");
-        printf("|| Quantia invalida! ||\n");
+        printf("|| opcao invalida! ||\n");
         printf("||==================||\n");
         }
     } while (opcao != 0);
@@ -159,13 +160,53 @@ void menuCarrinho() {
                 break;
             default:
                 printf("||==================||\n");
-        printf("|| Quantia invalida! ||\n");
+        printf("|| opcao invalida! ||\n");
         printf("||==================||\n");
         }
     } while (opcao != 0);
 }
 
 
+void menuCliente() {
+    int opcao;
+
+    do{
+       printf("\n==============================\n");
+    printf("||      MENU DE CLIENTES     ||\n");
+    printf("==============================\n");
+    printf("|| 1 | Cadastrar Cliente     ||\n");
+    printf("|| 2 | Listar Clientes       ||\n");
+    printf("|| 3 | Editar Cliente        ||\n");
+    printf("|| 4 | Excluir Cliente       ||\n");
+    printf("|| 0 | Voltar                ||\n");
+    printf("==============================\n");
+    printf("||Escolha uma opcao: ");
+    scanf(" %i", &opcao);
+
+        switch (opcao) {
+            case 1:
+                cadastro_cliente();
+                break;
+            case 2:
+                listar_clientes();
+                break;
+            case 3:
+                editar_cliente();
+                break;
+            case 4:
+                excluir_cliente();
+                break;
+            case 0:
+                printf("Saindo do programa.\n");
+                break;
+            default:
+                printf("||===================================||\n");
+         printf("|| Escolha invalida. tente novamente.||\n");
+         printf("||===================================||\n");
+        }
+    }while(opcao != 0);
+
+}
 
 
 
@@ -205,6 +246,9 @@ int main() {
             case 4:
                 menuCarrinho();
                 break;
+            case 5:
+                menuCliente();
+                break;
             case 0:
                 printf("||===========||\n");
                 printf("|| Saindo... ||\n");
@@ -212,7 +256,7 @@ int main() {
                 break;
             default:
                 printf("||==================||\n");
-                printf("|| Quantia invalida! ||\n");
+                printf("|| opcao invalida! ||\n");
                 printf("||==================||\n");
         }
     } while (opcao != 0);

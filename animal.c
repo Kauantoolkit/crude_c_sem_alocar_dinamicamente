@@ -36,13 +36,13 @@ void editar_animal() {
         }
         printf("Nome atual: %s\n", animais[indice].nome);
         printf("Novo nome: ");
-        scanf(" %19s", animais[indice].nome); // Limitando entrada para 19 caracteres
+        scanf(" %19s", animais[indice].nome); 
         printf("Peso atual: %.2f\n", animais[indice].peso);
         printf("Novo peso: ");
         scanf(" %f", &animais[indice].peso);
         printf("Dono atual: %s\n", animais[indice].dono);
         printf("Novo dono: ");
-        scanf(" %49s", animais[indice].dono); // Limitando entrada para 49 caracteres
+        scanf(" %49s", animais[indice].dono); 
         printf("Animal editado com sucesso!\n");
     } else {
         printf("\nNenhum animal cadastrado\n");

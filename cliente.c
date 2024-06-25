@@ -1,15 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 #include "animal.h"
+#include "cliente.h"
 
 #define MAX_CLIENTES 100
 
-typedef struct {
-    char nome[50];
-    char endereco[100];
-    char telefone[15];
-    Animal animais_do_cliente[20]; 
-} Cliente;
+
 
 
 
@@ -19,52 +15,7 @@ typedef struct {
 Cliente clientes[MAX_CLIENTES];
 int contador_de_clientes = 0;
 
-void cadastro_cliente();
-void listar_clientes();
-void editar_cliente();
-void excluir_cliente();
 
-int main() {
-    int opcao;
-
-    do{
-       printf("\n==============================\n");
-    printf("||      MENU DE CLIENTES     ||\n");
-    printf("==============================\n");
-    printf("|| 1 | Cadastrar Cliente     ||\n");
-    printf("|| 2 | Listar Clientes       ||\n");
-    printf("|| 3 | Editar Cliente        ||\n");
-    printf("|| 4 | Excluir Cliente       ||\n");
-    printf("|| 0 | Voltar                ||\n");
-    printf("==============================\n");
-    printf("||Escolha uma opcao: ");
-    scanf(" %i", &opcao);
-
-        switch (opcao) {
-            case 1:
-                cadastro_cliente();
-                break;
-            case 2:
-                listar_clientes();
-                break;
-            case 3:
-                editar_cliente();
-                break;
-            case 4:
-                excluir_cliente();
-                break;
-            case 0:
-                printf("Saindo do programa.\n");
-                break;
-            default:
-                printf("||===================================||\n");
-         printf("|| Escolha invalida. tente novamente.||\n");
-         printf("||===================================||\n");
-        }
-    }while(opcao != 0);
-
-    return 0;
-}
 
 void cadastro_cliente() {
     if(contador_de_clientes < MAX_CLIENTES){

@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "produtos.h": "c"
+        "produtos.h": "c",
+        "função cliente": "c"
     }
 }

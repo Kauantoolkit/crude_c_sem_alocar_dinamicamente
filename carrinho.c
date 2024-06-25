@@ -219,7 +219,7 @@ void finalizar_compra() {
 
     gerar_ticket(total, metodo, parcelas);
 
-    // Limpar o carrinho após a compra
+
     contador_de_itens_no_carrinho = 0;
     printf("||===================================||\n");
     printf("|| Compra finalizada com sucesso!    ||\n");
