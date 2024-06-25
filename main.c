@@ -11,13 +11,17 @@ void menuProdutos() {
     int opcao;
 
     do {
-        printf("\n=== MENU PRODUTOS ===\n");
-        printf("1. Cadastrar produto\n");
-        printf("2. Listar produtos\n");
-        printf("3. Editar produto\n");
-        printf("4. Excluir produto\n");
-        printf("0. Voltar\n");
-        printf("Escolha uma opcao: ");
+        printf("\n==============================\n");
+        printf("||      MENU DE PRODUTOS    ||\n");
+        printf("==============================\n");
+        printf("|| 1 | Cadastrar produto    ||\n");
+        printf("|| 2 | Listar produtos      ||\n");
+        printf("|| 3 | Editar produto       ||\n");
+        printf("|| 4 | Excluir produto      ||\n");
+        printf("|| 5 | Cadastrar cliente    ||\n");
+        printf("|| 0| Sair                  ||\n");
+        printf("==============================\n");
+        printf("||Escolha uma opcao: ");
         scanf(" %i", &opcao);
 
         switch (opcao) {
@@ -45,14 +49,17 @@ void menuAnimais() {
     int opcao;
 
     do {
-        printf("\n=== MENU ANIMAIS ===\n");
-        printf("1. Cadastrar animal\n");
-        printf("2. Listar animais\n");
-        printf("3. Editar animal\n");
-        printf("4. Excluir animal\n");
-        printf("0. Voltar\n");
-        printf("Escolha uma opcao: ");
-        scanf(" %i", &opcao);
+    printf("\n==============================\n");
+    printf("||      MENU DE ANIMAIS     ||\n");
+    printf("==============================\n");
+    printf("|| 1 | Cadastrar animal     ||\n");
+    printf("|| 2 | Listar animais       ||\n");
+    printf("|| 3 | Editar animal        ||\n");
+    printf("|| 4 | Excluir animal       ||\n");
+    printf("|| 0 | Voltar               ||\n");
+    printf("==============================\n");
+    printf("||Escolha uma opcao: ");
+    scanf(" %i", &opcao);
 
         switch (opcao) {
             case 1:
@@ -70,7 +77,9 @@ void menuAnimais() {
             case 0:
                 break;
             default:
-                printf("Opcao invalida!\n");
+                printf("||==================||\n");
+        printf("|| Quantia invalida! ||\n");
+        printf("||==================||\n");
         }
     } while (opcao != 0);
 }
@@ -79,14 +88,19 @@ void menuServicos() {
     int opcao;
 
     do {
-        printf("\n=== MENU SERVICOS ===\n");
-        printf("1. Cadastrar servico\n");
-        printf("2. Listar servicos\n");
-        printf("3. Editar servico\n");
-        printf("4. Excluir servico\n");
-        printf("0. Voltar\n");
-        printf("Escolha uma opcao: ");
+        printf("\n==============================\n");
+        printf("||      MENU DE SERVICOS    ||\n");
+        printf("==============================\n");
+        printf("|| 1 | Cadastrar servico    ||\n");
+        printf("|| 2 | Listar servicos      ||\n");
+        printf("|| 3 | Editar servico       ||\n");
+        printf("|| 4 | Excluir servico      ||\n");
+        printf("|| 0 | Voltar               ||\n");
+        printf("==============================\n");
+        printf("||Escolha uma opcao: ");
         scanf(" %i", &opcao);
+
+        
 
         switch (opcao) {
             case 1:
@@ -104,8 +118,10 @@ void menuServicos() {
             case 0:
                 break;
             default:
-                printf("Opcao invalida!\n");
-        }
+                printf("||==================||\n");
+                printf("|| Opcao invalida! ||\n");
+                printf("||==================||\n");
+                }
     } while (opcao != 0);
 }
 
@@ -113,14 +129,18 @@ void menuCarrinho() {
     int opcao;
 
     do {
-        printf("\n=== MENU CARRINHO ===\n");
-        printf("1. Adicionar ao carrinho\n");
-        printf("2. Listar carrinho\n");
-        printf("3. Remover do carrinho\n");
-        printf("4. Finalizar compra\n");
-        printf("0. Voltar\n");
-        printf("Escolha uma opcao: ");
+     printf("\n================================\n");
+    printf("||      MENU DE CARRINHO      ||\n");
+    printf("================================\n");
+    printf("|| 1 | Adicionar ao carrinho  ||\n");
+    printf("|| 2 | Listar carrinho        ||\n");
+    printf("|| 3 | Remover do carrinho    ||\n");
+    printf("|| 4 | Finalizar compra       ||\n");
+    printf("|| 0 | Voltar                 ||\n");
+    printf("================================\n");
+    printf("||Escolha uma opcao: ");
         scanf(" %i", &opcao);
+      
 
         switch (opcao) {
             case 1:
@@ -138,13 +158,12 @@ void menuCarrinho() {
             case 0:
                 break;
             default:
-                printf("Opcao invalida!\n");
+                printf("||==================||\n");
+        printf("|| Quantia invalida! ||\n");
+        printf("||==================||\n");
         }
     } while (opcao != 0);
 }
-
-
-
 
 
 
@@ -155,14 +174,23 @@ int main() {
     int opcao;
 
     do {
-        printf("\n=== PETSHOP ===\n");
-        printf("1. Menu Produtos\n");
-        printf("2. Menu Animais\n");
-        printf("3. Menu Servicos\n");
-        printf("4. Menu Carrinho\n");
-        printf("0. Sair\n");
-        printf("Escolha uma opcao: ");
+        printf("\n==============================\n");
+        printf("||                          ||        /\\_____/\\             \n");
+        printf("||                          ||       /   o o   \\            \n");
+        printf("||     MENU DE CARRINHO     ||      (     ^     )              \n");
+        printf("||                          ||       \\   (_)   /                \n");
+        printf("||                          ||        \\_______/                  \n");
+        printf("==============================\n");
+        printf("|| 1 | Menu Produtos        ||        /\\_____/\\    \n");
+        printf("|| 2 | Menu Animais         ||       /   o o   \\        \n");
+        printf("|| 3 | Menu Servicos        ||      |     ^     |      \n");
+        printf("|| 4 | Menu Carrinho        ||       \\   (W)   /          \n");
+        printf("|| 5 | Menu Cliente         ||        \\_______/        \n");
+        printf("|| 0 | Sair                 ||\n");
+        printf("==============================\n");
+        printf("||Escolha uma opcao: ");
         scanf(" %i", &opcao);
+    
 
         switch (opcao) {
             case 1:
@@ -178,10 +206,14 @@ int main() {
                 menuCarrinho();
                 break;
             case 0:
-                printf("Saindo...\n");
+                printf("||===========||\n");
+                printf("|| Saindo... ||\n");
+                printf("||===========||\n");
                 break;
             default:
-                printf("Opcao invalida!\n");
+                printf("||==================||\n");
+                printf("|| Quantia invalida! ||\n");
+                printf("||==================||\n");
         }
     } while (opcao != 0);
 

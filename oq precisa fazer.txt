@@ -1,0 +1,8 @@
+metodos de pagamento
+ticket da compra
+toda a estrutura do cliente
+vincular todo animal cadastrado a um cliente
+vincular um carrinho a cada cliente
+
+
+

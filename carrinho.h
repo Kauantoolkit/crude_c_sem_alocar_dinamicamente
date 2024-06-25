@@ -12,6 +12,7 @@ typedef struct {
     float valor;
     int id_animal;
     int quantia;
+    float subtotal;
 } ItemCarrinho;
 
 extern ItemCarrinho carrinho[100];
